@@ -7,7 +7,7 @@ API_HASH = os.environ.get("API_HASH", None)
 TOKEN = os.environ.get("TOKEN", None)
 START_IMG = os.environ.get(
     "START_IMG",
-    "https://telegra.ph/file/f3696f6234fce4d4fb85d.jpg",
+    "https://files.catbox.moe/s0gtn8.jpg",
 )
 
 SHIZUKA = Client(":memory:", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
