@@ -7,8 +7,8 @@ from shizuka import START_IMG
 
 SHIZUKA_START = f"I am Destiny 『しずか』, An Intelligent ChatBot.[⠀]({START_IMG})"
 
-
-@SHIZUKA.on_message(filters.command(["start"], prefixes=["/", "!"]) & ~filters.edited)
+# Yahan se '& ~filters.edited' ko hata diya gaya hai
+@SHIZUKA.on_message(filters.command(["start"], prefixes=["/", "!"]))
 async def info(client, message):
     buttons = [
         [
@@ -28,8 +28,7 @@ async def info(client, message):
             ),
         ],
     ]
-    await SHIZUKA.send_message(
-        chat_id=message.chat.id,
+    await message.reply_text(
         text=SHIZUKA_START,
         reply_markup=InlineKeyboardMarkup(buttons),
     )
