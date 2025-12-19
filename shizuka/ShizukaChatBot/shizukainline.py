@@ -65,7 +65,7 @@ async def shizukachatbot(answers, text):
 **Shizuka:** `{result['cnt']}`"""
     answers.append(
         InlineQueryResultPhoto(
-            photo_url="https://telegra.ph/file/c8f2e290ba36052058154.jpg",
+            photo_url="https://files.catbox.moe/s0gtn8.jpg",
             title="Shizuka",
             description=result["cnt"],
             caption=caption,
