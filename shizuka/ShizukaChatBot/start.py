@@ -20,11 +20,11 @@ async def info(client, message):
         [
             InlineKeyboardButton(
                 "Github",
-                url="https://github.com/ChankitSaini/ShizukaChatBot",
+                url="https://github.com/sparshshivhare2007-pixel/ShizukaChatBot1",
             ),
             InlineKeyboardButton(
                 "Maintained by",
-                url="https://t.me/NeuroticAssociation",
+                url="https://t.me/destinybots",
             ),
         ],
     ]
