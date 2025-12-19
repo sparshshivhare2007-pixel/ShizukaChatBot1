@@ -1,4 +1,13 @@
 import os
+import asyncio
+import threading
+
+# Python 3.12+ compatibility fix
+try:
+    asyncio.get_event_loop()
+except RuntimeError:
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
 
 from pyrogram import Client
 
