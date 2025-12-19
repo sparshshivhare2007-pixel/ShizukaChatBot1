@@ -1,15 +1,12 @@
 import os
 import asyncio
-import threading
+from pyrogram import Client
 
-# Python 3.12+ compatibility fix
+# Python version compatibility fix
 try:
     asyncio.get_event_loop()
 except RuntimeError:
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-
-from pyrogram import Client
+    asyncio.set_event_loop(asyncio.new_event_loop())
 
 API_ID = os.environ.get("API_ID", None)
 API_HASH = os.environ.get("API_HASH", None)
@@ -19,4 +16,11 @@ START_IMG = os.environ.get(
     "https://files.catbox.moe/s0gtn8.jpg",
 )
 
-SHIZUKA = Client(":memory:", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+# ":memory:" ki jagah "shizuka" use karein taaki time sync issue na aaye
+SHIZUKA = Client(
+    "shizuka",
+    api_id=API_ID,
+    api_hash=API_HASH,
+    bot_token=TOKEN,
+    workers=20
+)
